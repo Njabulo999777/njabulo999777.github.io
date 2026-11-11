@@ -79,6 +79,14 @@ h2{font:700 clamp(1.8rem,3.5vw,2.5rem)/1.1 var(--display);letter-spacing:-.02em;
 .steps i{width:8px;background:var(--line);border-radius:2px 2px 0 0}
 .steps i:nth-child(1){height:6px}.steps i:nth-child(2){height:11px}.steps i:nth-child(3){height:16px}.steps i:nth-child(4){height:22px}
 .steps i.on{background:var(--step)}
+.scope{margin:0 0 1.25rem;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.scope summary{cursor:pointer;padding:.7rem 1rem;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.scope summary::-webkit-details-marker{display:none}
+.scope summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--step);transition:transform .2s}
+.scope[open] summary::after{transform:rotate(45deg)}
+.scope dl{margin:0;padding:.1rem 1rem 1rem}
+.scope dt{font-weight:500;margin-top:.85rem;padding-left:.75rem;border-left:3px solid var(--step)}
+.scope dd{margin:.15rem 0 0;padding-left:.75rem;border-left:3px solid var(--step-soft);color:var(--muted);font-size:.98rem;line-height:1.55}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
 .about div{background:var(--step-soft);border-radius:12px;padding:1.75rem}
 .about h4{font:700 1.15rem/1.3 var(--display);margin:0 0 .5rem}
@@ -150,6 +158,13 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
             <li>Forecast potential financial pressure</li>
             <li>Improve financial decision-making</li>
           </ul>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>A written cash-flow review of the last 6 months, a simple 3-month forecast, and a list of the top 3 to 5 risks with recommendations.</dd>
+            <dt>What we need from you</dt><dd>Bank statements and a list of regular income and expenses, within 3 days of starting.</dd>
+            <dt>How long it takes</dt><dd>7 working days after we receive your information.</dd>
+            <dt>What’s included</dt><dd>One 30-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>What costs extra</dt><dd>Ongoing monthly tracking, or implementing the changes for you.</dd>
+          </dl></details>
           <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="price"><small>from</small>R2,500</span></div>
         </div>
         <div class="item">
@@ -160,6 +175,13 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
             <li>Evaluate pricing and revenue opportunities</li>
             <li>Identify revenue concentration risks</li>
           </ul>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>A short report on your market, your main competitors and 3 to 5 growth opportunities, plus a check of where your income is concentrated.</dd>
+            <dt>What we need from you</dt><dd>Sales figures for the last 6 months, your price list and a list of your main customers, within 3 days of starting.</dd>
+            <dt>How long it takes</dt><dd>7 working days after we receive your information.</dd>
+            <dt>What’s included</dt><dd>One 30-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>What costs extra</dt><dd>Ongoing market tracking, or running campaigns for you.</dd>
+          </dl></details>
           <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="price"><small>from</small>R2,800</span></div>
         </div>
         <div class="item">
@@ -170,6 +192,13 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
             <li>Evaluate pricing and profit margins</li>
             <li>Identify opportunities to improve efficiency</li>
           </ul>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>A review of your costs and profit margins, with the 3 to 5 biggest savings or pricing changes we found.</dd>
+            <dt>What we need from you</dt><dd>Expense records and the prices you charge for each product or service, within 3 days of starting.</dd>
+            <dt>How long it takes</dt><dd>5 working days after we receive your information.</dd>
+            <dt>What’s included</dt><dd>One 30-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>What costs extra</dt><dd>Ongoing cost monitoring, or negotiating with suppliers for you.</dd>
+          </dl></details>
           <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span><span class="price"><small>from</small>R2,200</span></div>
         </div>
         <div class="item">
@@ -180,6 +209,13 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
             <li>Analyse potential risks and alternative scenarios</li>
             <li>Support better-informed strategic decisions</li>
           </ul>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>A written comparison of your options for one big decision (expansion, equipment or financing), with the risks and 2 to 3 alternative scenarios.</dd>
+            <dt>What we need from you</dt><dd>Quotes or details of the decision, plus your recent financial statements, within 3 days of starting.</dd>
+            <dt>How long it takes</dt><dd>10 working days after we receive your information.</dd>
+            <dt>What’s included</dt><dd>One 45-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>What costs extra</dt><dd>Detailed financial modelling, or help carrying out the decision.</dd>
+          </dl></details>
           <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="price"><small>from</small>R3,000</span></div>
         </div>
       </div>
@@ -204,16 +240,37 @@ footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-s
         <div class="plan">
           <h4>Speed and mobile fix</h4>
           <p>We make your website load faster and work properly on mobile phones, so more visitors stay and take action.</p>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>Before and after speed tests, image and code fixes, and a check on common phone screen sizes.</dd>
+            <dt>What we need from you</dt><dd>Access to your website and hosting, within 2 days of starting.</dd>
+            <dt>How long it takes</dt><dd>5 working days after we get access.</dd>
+            <dt>What’s included</dt><dd>One round of changes after we show you the results.</dd>
+            <dt>What costs extra</dt><dd>A new design, new features, or monthly maintenance.</dd>
+          </dl></details>
           <div class="price"><small>from</small>R1,800</div>
         </div>
         <div class="plan">
           <h4>Service pages and site structure</h4>
           <p>We improve your structure and create clear service pages, so visitors see what you offer and know how to reach you.</p>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>A clearer menu and page layout, plus up to 3 service pages with simple wording and an easy way to contact you.</dd>
+            <dt>What we need from you</dt><dd>Your list of services, your logo and any photos, within 5 days of starting.</dd>
+            <dt>How long it takes</dt><dd>7 working days after we receive your content.</dd>
+            <dt>What’s included</dt><dd>One round of changes to the wording and layout.</dd>
+            <dt>What costs extra</dt><dd>Extra pages, professional photography, or writing blog posts.</dd>
+          </dl></details>
           <div class="price"><small>from</small>R3,200</div>
         </div>
         <div class="plan best">
           <h4>The website rescue bundle</h4>
           <p>A full digital overhaul that combines the speed and mobile fix with the service pages and structure work.</p>
+          <details class="scope"><summary>See what’s included</summary><dl>
+            <dt>What you get</dt><dd>Everything in the speed and mobile fix and the service pages package, done together in one project.</dd>
+            <dt>What we need from you</dt><dd>Website access, your list of services, your logo and any photos, within 5 days of starting.</dd>
+            <dt>How long it takes</dt><dd>10 working days after we receive everything.</dd>
+            <dt>What’s included</dt><dd>Two rounds of changes across the whole project.</dd>
+            <dt>What costs extra</dt><dd>A new design, new features, or monthly maintenance.</dd>
+          </dl></details>
           <div class="price"><small>from</small>R4,500</div>
         </div>
       </div>
