@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OmniScale – Insight that scales</title>
+<meta name="description" content="OmniScale provides economic and strategic advisory services and website optimisation for founders and small and medium-sized businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg fill='%232b59c3'%3E%3Crect x='2' y='28' width='7' height='10' rx='1.5' opacity='.4'/%3E%3Crect x='12' y='21' width='7' height='17' rx='1.5' opacity='.6'/%3E%3Crect x='22' y='14' width='7' height='24' rx='1.5' opacity='.8'/%3E%3Crect x='32' y='6' width='7' height='32' rx='1.5'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#12233f; --muted:#52607a;
+  --line:#dde2ea; --step:#2b59c3; --step-soft:#dfe8fb; --on-step:#ffffff;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1b30; --surface:#16253f; --ink:#eaf0fb; --muted:#9fb0cc;
+    --line:#26385a; --step:#7ea2f5; --step-soft:#1e3260; --on-step:#0f1b30;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1b30; --surface:#16253f; --ink:#eaf0fb; --muted:#9fb0cc;
+  --line:#26385a; --step:#7ea2f5; --step-soft:#1e3260; --on-step:#0f1b30;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--step);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:1.5rem;padding-bottom:1.5rem}
+.logo{display:flex;align-items:center;gap:.6rem;font:500 1.45rem/1 var(--display);text-decoration:none;letter-spacing:-.01em}
+.logo b{font-weight:700}
+.mark{width:36px;height:36px;flex:none}
+nav{display:flex;gap:1.75rem}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink)}
+
+.hero{padding:3rem 0 5rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:end}
+h1{font:700 clamp(2.6rem,6vw,4.6rem)/1.02 var(--display);letter-spacing:-.03em;margin:0 0 1.5rem}
+.lead{max-width:34rem;color:var(--muted);font-size:1.2rem;margin:0 0 2rem}
+.btn{display:inline-block;background:var(--step);color:var(--on-step);padding:.85rem 1.5rem;border-radius:8px;text-decoration:none;font-weight:500}
+.btn:hover{filter:brightness(1.08)}
+
+.stairs{display:flex;align-items:flex-end;gap:10px;height:300px}
+.stairs span{flex:1;background:var(--step);border-radius:6px 6px 0 0;transform-origin:bottom;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.stairs span:nth-child(1){height:25%;opacity:.35;animation-delay:.1s}
+.stairs span:nth-child(2){height:50%;opacity:.55;animation-delay:.25s}
+.stairs span:nth-child(3){height:75%;opacity:.78;animation-delay:.4s}
+.stairs span:nth-child(4){height:100%;animation-delay:.55s}
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(1.8rem,3.5vw,2.5rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 1rem}
+.intro{max-width:38rem;color:var(--muted);margin:0 0 2.5rem}
+
+.division+.division{margin-top:4rem}
+.division h3{font:700 1.35rem/1.2 var(--display);margin:0 0 .5rem}
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.item{background:var(--surface);padding:1.75rem}
+.item h4{font:700 1.1rem/1.3 var(--display);margin:0 0 .5rem}
+.item p{margin:0;color:var(--muted)}
+
+.tagline{font:500 1.25rem/1.3 var(--display);color:var(--step);margin:-.25rem 0 1rem}
+.item{display:flex;flex-direction:column}
+.item ul{margin:.9rem 0 1.5rem;padding:0 0 0 1.1rem;color:var(--muted);flex:1}
+.item li{margin:.25rem 0}
+.tag{display:flex;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:1rem}
+.tag .price{font-size:1.6rem}
+.steps{display:flex;align-items:flex-end;gap:3px;height:22px}
+.steps i{width:8px;background:var(--line);border-radius:2px 2px 0 0}
+.steps i:nth-child(1){height:6px}.steps i:nth-child(2){height:11px}.steps i:nth-child(3){height:16px}.steps i:nth-child(4){height:22px}
+.steps i.on{background:var(--step)}
+.item .sub{margin:-.25rem 0 .6rem;color:var(--step);font-weight:500;font-size:.92rem}
+.item .q{margin:0 0 1.25rem;padding:.65rem .85rem;background:var(--step-soft);border-radius:8px;color:var(--ink);font-size:.95rem;line-height:1.5}
+.item .q b{display:block;font-size:.8rem;font-weight:500;color:var(--step);margin-bottom:.15rem}
+.scope{margin:0 0 1.25rem;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.scope summary{cursor:pointer;padding:.7rem 1rem;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.scope summary::-webkit-details-marker{display:none}
+.scope summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--step);transition:transform .2s}
+.scope[open] summary::after{transform:rotate(45deg)}
+.scope dl{margin:0;padding:.1rem 1rem 1rem}
+.scope dt{font-weight:500;margin-top:.85rem;padding-left:.75rem;border-left:3px solid var(--step)}
+.scope dd{margin:.15rem 0 0;padding-left:.75rem;border-left:3px solid var(--step-soft);color:var(--muted);font-size:.98rem;line-height:1.55}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
+.about div{background:var(--step-soft);border-radius:12px;padding:1.75rem}
+.about h4{font:700 1.15rem/1.3 var(--display);margin:0 0 .5rem}
+.about p{margin:0}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.75rem;display:flex;flex-direction:column}
+.plan h4{font:700 1.15rem/1.3 var(--display);margin:0 0 .5rem}
+.plan p{color:var(--muted);margin:0 0 1.5rem;flex:1}
+.price{font:700 1.9rem/1 var(--display);letter-spacing:-.02em}
+.price small{font:400 .9rem var(--body);color:var(--muted);letter-spacing:0;margin-right:.35rem}
+.plan.best{background:var(--step-soft);border-color:var(--step)}
+
+.report{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;max-width:880px}
+.report-head{padding:1.5rem 1.75rem;border-bottom:1px solid var(--line);background:var(--step-soft)}
+.report-head h3{font:700 1.35rem/1.25 var(--display);margin:0 0 .25rem}
+.report-head p{margin:0;color:var(--muted);font-size:.95rem}
+.report-body{padding:1.75rem}
+.report h4{font:700 1.05rem/1.3 var(--display);margin:1.75rem 0 .5rem}
+.report h4:first-child{margin-top:0}
+.report p{margin:0 0 .75rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.25rem 0}
+.stats div{border:1px solid var(--line);border-radius:10px;padding:1rem}
+.stats b{display:block;font:700 1.6rem/1.1 var(--display);color:var(--step)}
+.stats span{font-size:.9rem;color:var(--muted)}
+.chart{width:100%;height:auto;display:block;margin:.5rem 0 0}
+.chart text{fill:var(--muted);font:12px var(--body)}
+.report ol{margin:.25rem 0 0;padding-left:1.25rem;color:var(--muted)}
+.report li{margin:.35rem 0}
+.disclaimer{margin:1rem 0 0;font-size:.9rem;color:var(--muted)}
+@media (max-width:820px){.stats{grid-template-columns:1fr}}
+.founder{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:2rem;align-items:start}
+.profile-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.75rem}
+.monogram{width:72px;height:72px;border-radius:50%;background:var(--step);color:var(--on-step);display:grid;place-items:center;font:700 1.6rem var(--display);margin-bottom:1rem}
+.profile-card h3{font:700 1.3rem/1.2 var(--display);margin:0}
+.profile-card .role{color:var(--step);font-weight:500;margin:.15rem 0 .9rem}
+.profile-card p{margin:0;color:var(--muted);font-size:.98rem}
+.bio p{margin:0 0 1rem;color:var(--muted)}
+.chips{list-style:none;margin:1.25rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.chips li{background:var(--step-soft);border-radius:999px;padding:.3rem .85rem;font-size:.9rem;color:var(--ink)}
+.notice{margin-top:1.5rem;padding:1.1rem 1.25rem;border-left:4px solid var(--step);background:var(--surface);border-radius:0 10px 10px 0;color:var(--muted);font-size:.98rem}
+.notice b{color:var(--ink)}
+.trust h3{font:700 1.5rem/1.2 var(--display);letter-spacing:-.01em;margin:3.5rem 0 1.5rem}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.trust-grid div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.trust-grid h4{font:700 1.1rem/1.3 var(--display);margin:0 0 .4rem}
+.trust-grid p{margin:0;color:var(--muted);font-size:.98rem}
+@media (max-width:820px){.founder,.trust-grid{grid-template-columns:1fr}}
+.contact{text-align:left}
+.details{display:grid;grid-template-columns:repeat(2,minmax(0,22rem));gap:1.25rem;margin:0}
+.details div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.5rem}
+.details dt{color:var(--muted);font-size:.95rem;margin:0 0 .25rem}
+.details dd{margin:0;font:700 1.3rem/1.3 var(--display);overflow-wrap:anywhere;user-select:all}
+@media (max-width:820px){.details{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.95rem}
+
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .stairs{height:200px}
+  .items,.pricing{grid-template-columns:1fr}
+  nav{gap:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .stairs span{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="OmniScale home"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><g fill="var(--step)"><rect x="2" y="28" width="7" height="10" rx="1.5" opacity=".4"/><rect x="12" y="21" width="7" height="17" rx="1.5" opacity=".6"/><rect x="22" y="14" width="7" height="24" rx="1.5" opacity=".8"/><rect x="32" y="6" width="7" height="32" rx="1.5"/></g></svg><span>Omni<b>Scale</b></span></a>
+    <nav aria-label="Main">
+      <a href="#advisory">Advisory</a>
+      <a href="#websites">Websites</a>
+      <a href="#sample">Sample</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Insight that scales.</h1>
+        <p class="lead">OmniScale provides economic and strategic advisory services, together with website optimisation, to help founders and small businesses make sound decisions and strengthen their online presence.</p>
+        <a class="btn" href="#contact">Contact us</a>
+      </div>
+      <div class="stairs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <section id="advisory">
+    <div class="wrap">
+      <h2>Strategic risk and decision advisory</h2>
+      <p class="tagline">Smarter decisions. Stronger businesses.</p>
+      <p class="intro">Business owners face difficult decisions on pricing, growth and investment, often within an uncertain economic environment. OmniScale assists South African businesses in making well-informed decisions through market research, economic analysis and risk intelligence.</p>
+      <div class="items">
+        <div class="item">
+          <h4>Market and competitive intelligence</h4>
+          <p class="sub">Understanding the market</p>
+          <p>We assist businesses in understanding the markets in which they operate.</p>
+          <ul>
+            <li>Market demand and consumer behaviour</li>
+            <li>Industry and competitor analysis</li>
+            <li>Market size and growth opportunities</li>
+            <li>Customer purchasing patterns</li>
+            <li>Supply and demand conditions</li>
+          </ul>
+          <p class="q"><b>Key question addressed</b>Where is the market going, and how can this business position itself to benefit?</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>A written market report covering demand, your main competitors, market size and 3 to 5 growth opportunities.</dd>
+            <dt>Client requirements</dt><dd>A description of your products, customers and area, plus recent sales figures, within 3 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>7 working days after we receive your information.</dd>
+            <dt>Included in the fee</dt><dd>One 30-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>Charged separately</dt><dd>Ongoing market monitoring, or surveys and primary research.</dd>
+          </dl></details>
+          <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><span class="price"><small>from</small>R2,800</span></div>
+        </div>
+        <div class="item">
+          <h4>Pricing and business economics</h4>
+          <p class="sub">Understanding profitability through economics</p>
+          <p>We examine the economic forces affecting a business’s revenue, costs and competitiveness.</p>
+          <ul>
+            <li>Pricing strategy and price elasticity of demand</li>
+            <li>Consumer sensitivity to price changes</li>
+            <li>Cost structures and production economics</li>
+            <li>Break-even and contribution analysis</li>
+            <li>Competitive pricing and market positioning</li>
+          </ul>
+          <p class="q"><b>Key question addressed</b>How should this business price and allocate its resources to improve its economic performance?</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>A review of your pricing, costs and break-even point, showing how price changes could affect your sales and profit.</dd>
+            <dt>Client requirements</dt><dd>Your price list, cost records and sales figures for the last 6 months, within 3 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>5 working days after we receive your information.</dd>
+            <dt>Included in the fee</dt><dd>One 30-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>Charged separately</dt><dd>Ongoing pricing reviews, or implementation of new prices on your behalf.</dd>
+          </dl></details>
+          <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span><span class="price"><small>from</small>R2,200</span></div>
+        </div>
+        <div class="item">
+          <h4>Investment and strategic decision analysis</h4>
+          <p class="sub">Making better economic decisions</p>
+          <p>We assist businesses in evaluating major decisions before resources are committed.</p>
+          <ul>
+            <li>Expansion and investment feasibility</li>
+            <li>Cost-benefit analysis</li>
+            <li>Investment returns and opportunity costs</li>
+            <li>Scenario and sensitivity analysis</li>
+            <li>Resource allocation and strategic alternatives</li>
+          </ul>
+          <p class="q"><b>Key question addressed</b>Is this decision economically worthwhile, and what are the consequences of choosing one option over another?</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>A written analysis of one major decision, with a cost-benefit analysis, expected returns, opportunity costs and 2 to 3 scenarios.</dd>
+            <dt>Client requirements</dt><dd>Details or quotes for the decision, plus your recent financial statements, within 3 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>10 working days after we receive your information.</dd>
+            <dt>Included in the fee</dt><dd>One 45-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>Charged separately</dt><dd>Detailed financial modelling, or assistance with implementing the decision.</dd>
+          </dl></details>
+          <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="price"><small>from</small>R3,000</span></div>
+        </div>
+        <div class="item">
+          <h4>Macroeconomic and economic risk intelligence</h4>
+          <p class="sub">Understanding the external economy</p>
+          <p>We interpret economic developments and explain their implications for business.</p>
+          <ul>
+            <li>Inflation and interest-rate exposure</li>
+            <li>Exchange-rate and international trade risks</li>
+            <li>Economic policy and regulatory developments</li>
+            <li>Industry and sector economic outlooks</li>
+            <li>Economic forecasting and scenario modelling</li>
+          </ul>
+          <p class="q"><b>Key question addressed</b>What is changing in the economy, how could it affect this business, and how should management prepare?</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>A report on the economic changes most likely to affect your business, covering inflation, interest rates, exchange rates and policy, with scenarios and suggested preparations.</dd>
+            <dt>Client requirements</dt><dd>A short description of your business, your main costs, and where you buy and sell, within 3 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>7 working days after we receive your information.</dd>
+            <dt>Included in the fee</dt><dd>One 30-minute call to explain the findings, and one round of questions afterwards.</dd>
+            <dt>Charged separately</dt><dd>Monthly economic updates or a customised forecast model.</dd>
+          </dl></details>
+          <div class="tag"><span class="steps" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></span><span class="price"><small>from</small>R2,500</span></div>
+        </div>
+      </div>
+      <div class="about">
+        <div>
+          <h4>Who we help</h4>
+          <p>Founders, entrepreneurs and established small and medium-sized businesses looking to improve performance, manage uncertainty and make more informed decisions.</p>
+        </div>
+        <div>
+          <h4>Why work with us</h4>
+          <p>We focus on understanding the problem, analysing the available information and providing practical recommendations. Whether a business is under financial pressure, pursuing growth or considering a major investment, we can assist in assessing the options available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="websites">
+    <div class="wrap">
+      <h2>Digital presence and website optimisation</h2>
+      <p class="intro">Practical solutions to the technical and structural problems that cause small business websites to lose potential clients.</p>
+      <div class="pricing">
+        <div class="plan">
+          <h4>Speed and mobile fix</h4>
+          <p>We improve the loading speed and mobile performance of your website, so that more visitors remain on the site and take action.</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>Speed tests before and after the work, image and code fixes, and a check across common phone screen sizes.</dd>
+            <dt>Client requirements</dt><dd>Access to your website and hosting, within 2 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>5 working days after we get access.</dd>
+            <dt>Included in the fee</dt><dd>One round of changes following presentation of the results.</dd>
+            <dt>Charged separately</dt><dd>A redesign, new features or monthly maintenance.</dd>
+          </dl></details>
+          <div class="price"><small>from</small>R1,800</div>
+        </div>
+        <div class="plan">
+          <h4>Service pages and site structure</h4>
+          <p>We improve the structure of your website and create clear service pages, so that visitors understand your offering and know how to contact you.</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>An improved menu and page layout, plus up to 3 service pages with clear wording and prominent contact details.</dd>
+            <dt>Client requirements</dt><dd>Your list of services, logo and any photographs, within 5 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>7 working days after we receive your content.</dd>
+            <dt>Included in the fee</dt><dd>One round of changes to the wording and layout.</dd>
+            <dt>Charged separately</dt><dd>Additional pages, professional photography or the writing of blog content.</dd>
+          </dl></details>
+          <div class="price"><small>from</small>R3,200</div>
+        </div>
+        <div class="plan best">
+          <h4>The website rescue bundle</h4>
+          <p>A comprehensive digital overhaul that combines the speed and mobile fix with the service pages and structure work.</p>
+          <details class="scope"><summary>View scope of service</summary><dl>
+            <dt>Deliverables</dt><dd>All work included in the speed and mobile fix and the service pages package, completed together as one project.</dd>
+            <dt>Client requirements</dt><dd>Website access, your list of services, logo and any photographs, within 5 days of starting.</dd>
+            <dt>Turnaround time</dt><dd>10 working days after we receive everything.</dd>
+            <dt>Included in the fee</dt><dd>Two rounds of changes across the whole project.</dd>
+            <dt>Charged separately</dt><dd>A redesign, new features or monthly maintenance.</dd>
+          </dl></details>
+          <div class="price"><small>from</small>R4,500</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sample">
+    <div class="wrap">
+      <h2>Sample deliverable</h2>
+      <p class="intro">An illustration of the format and level of detail of a written advisory report, using a fictional business and fictional figures.</p>
+      <article class="report">
+        <div class="report-head">
+          <h3>Pricing and business economics review</h3>
+          <p>Example client: a small artisan bakery (fictional)</p>
+        </div>
+        <div class="report-body">
+          <h4>Summary</h4>
+          <p>The bakery sells its main product, an artisan loaf, at R40. After variable costs, each loaf contributes R16 towards fixed costs of R12,000 per month. The business is profitable, but its margin is thin and sensitive to small changes in volume.</p>
+          <div class="stats">
+            <div><b>750</b><span>Loaves per month needed to break even</span></div>
+            <div><b>R2,400</b><span>Monthly profit at 900 loaves</span></div>
+            <div><b>R16</b><span>Contribution per loaf (R40 price less R24 cost)</span></div>
+          </div>
+          <h4>Break-even analysis</h4>
+          <svg class="chart" viewBox="0 0 400 230" role="img" aria-label="Break-even chart: revenue crosses total cost at 750 loaves per month">
+            <line x1="40" y1="190" x2="380" y2="190" stroke="var(--line)" stroke-width="1.5"/>
+            <line x1="40" y1="20" x2="40" y2="190" stroke="var(--line)" stroke-width="1.5"/>
+            <line x1="40" y1="149.2" x2="380" y2="51.4" stroke="var(--muted)" stroke-width="2.5"/>
+            <line x1="40" y1="190" x2="380" y2="26.8" stroke="var(--step)" stroke-width="2.5"/>
+            <line x1="295" y1="20" x2="295" y2="190" stroke="var(--muted)" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="252.5" cy="88" r="5" fill="var(--step)"/>
+            <text x="244" y="76" text-anchor="end">Break-even: 750</text>
+            <text x="298" y="34">Current: 900</text>
+            <text x="372" y="22" text-anchor="end" style="fill:var(--step)">Revenue</text>
+            <text x="372" y="70" text-anchor="end">Total cost</text>
+            <text x="210" y="215" text-anchor="middle">Loaves sold per month</text>
+            <text x="38" y="206" text-anchor="end">0</text>
+            <text x="380" y="206" text-anchor="end">1,200</text>
+          </svg>
+          <h4>Key findings</h4>
+          <ol>
+            <li>Sales exceed break-even by only 150 loaves (20%), which leaves little protection against a slow month.</li>
+            <li>A price of R44 would lift the contribution per loaf to R20 and reduce the break-even point to 600 loaves.</li>
+            <li>If the higher price reduced sales by 10% (to 810 loaves), monthly profit would still rise from R2,400 to R4,200.</li>
+          </ol>
+          <h4>Recommendations</h4>
+          <ol>
+            <li>Test a price of R44 for one month and compare actual sales with the 810-loaf scenario.</li>
+            <li>Review the R24 variable cost per loaf, beginning with the largest ingredient supplier.</li>
+            <li>Reassess the price if monthly sales fall below 700 loaves.</li>
+          </ol>
+          <p class="disclaimer">Illustrative example only. The business, figures and assumptions are fictional and do not represent a real client or a guaranteed result.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About the founder</h2>
+      <p class="intro">OmniScale is founded on formal economic training and practical technical skills, applied to the decisions and websites of small businesses.</p>
+      <div class="founder">
+        <div class="profile-card">
+          <div class="monogram" aria-hidden="true">NX</div>
+          <h3>Njabulo Bongani Xulu</h3>
+          <p class="role">Founder, OmniScale</p>
+          <p>Bachelor of Commerce in Economics and Human Resource Management, University of Zululand (expected graduation 2027).</p>
+        </div>
+        <div class="bio">
+          <p>OmniScale was founded by Njabulo Bongani Xulu, a final-year Bachelor of Commerce student specialising in Economics and Human Resource Management. His studies include development economics, economic research and econometrics, training and development management, and organisation development.</p>
+          <p>This academic foundation underpins the firm’s advisory work in market analysis, pricing economics, investment appraisal and macroeconomic risk. It is complemented by practical skills in Microsoft Excel, Python, and HTML and CSS, which support the firm’s data analysis and website optimisation services.</p>
+          <ul class="chips">
+            <li>Macro and microeconomic analysis</li>
+            <li>Econometrics</li>
+            <li>Fiscal policy evaluation</li>
+            <li>Foreign exchange market analysis</li>
+            <li>Microsoft Excel</li>
+            <li>Python</li>
+            <li>HTML and CSS</li>
+            <li>Reports and presentations (Word, PowerPoint)</li>
+          </ul>
+          <div class="notice"><b>A newly established firm.</b> OmniScale does not claim an extensive record of client engagements. The firm instead offers rigorous academic grounding, clearly defined services with stated starting prices, and careful, accountable work that clients can assess from the first engagement.</div>
+        </div>
+      </div>
+      <div class="trust">
+        <h3>Why businesses can rely on OmniScale</h3>
+        <div class="trust-grid">
+          <div><h4>A sound economic foundation</h4><p>Our analysis applies recognised methods, including cost-benefit analysis, break-even analysis and scenario modelling, rather than opinion or guesswork.</p></div>
+          <div><h4>Clarity before commitment</h4><p>Every service has a defined scope, deliverables, turnaround time and starting price, so clients know exactly what to expect before work begins.</p></div>
+          <div><h4>Direct accountability</h4><p>Clients deal directly with the founder throughout each engagement, which ensures clear communication and personal responsibility for the quality of the work.</p></div>
+          <div><h4>A low-risk way to begin</h4><p>Modest starting prices and tightly scoped services allow a business to assess the quality of our work with limited financial commitment.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact us</h2>
+      <p class="intro">Please tell us about your business and your objectives. We will advise on the most suitable starting point.</p>
+      <dl class="details">
+        <div><dt>Email</dt><dd>Nxulu6118@gmail.com</dd></div>
+        <div><dt>Telephone / WhatsApp</dt><dd>073 825 7635</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> OmniScale. Insight that scales.</div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
